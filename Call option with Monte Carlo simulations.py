@@ -135,7 +135,7 @@ K=40
 
 
 def stock_price(Sn):
-    Sn1=Sn+r*Sn*dt+vol*Sn*rng.normal()
+    Sn1=Sn*np.exp((r-(vol**2)/2)*dt+(vol*np.sqrt(dt)*rng.normal()))
     St.append(Sn1)
     return Sn1
 
